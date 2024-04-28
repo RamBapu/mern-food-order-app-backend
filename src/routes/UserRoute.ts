@@ -7,6 +7,6 @@ const router = express.Router()
 
 router.get('/', validateToken, validateAuthenticatedUserInfo, UserController.getUser)
 router.post('/', validateToken, UserController.createUser)
-router.put('/', validateToken, validateAuthenticatedUserInfo, validateUserRequest, UserController.updateUser)
+router.put('/', validateUserRequest, validateToken, validateAuthenticatedUserInfo, UserController.updateUser)
 
 export default router
